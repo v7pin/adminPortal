@@ -32,9 +32,9 @@ def generate_certificate(name, date, gender, output_path):
     # Load the fonts
     font_path_regular = './PTSerif-Regular.ttf'  # Path to the regular font
     font_path_cursive = './PinyonScript-Regular.ttf'  # Path to the cursive font
-    font_large = ImageFont.truetype(font_path_cursive, 130)
-    font_small = ImageFont.truetype(font_path_regular, 35)
-    font_date = ImageFont.truetype(font_path_regular, 35)
+    font_large = ImageFont.truetype(font_path_cursive, 100)
+    font_small = ImageFont.truetype(font_path_regular, 19)
+    font_date = ImageFont.truetype(font_path_regular, 19)
 
     # Convert the date to the desired format
     formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%B %d, %Y")
@@ -43,9 +43,9 @@ def generate_certificate(name, date, gender, output_path):
     pronoun = "his" if gender.lower() == "male" else "her"
 
     # Define text positions
-    name_position = (0, 650)  # Adjust the y-coordinate as needed
-    content_position = (0, 810)  # Adjust the y-coordinate as needed
-    date_position = (0, 960)  # Adjust the y-coordinate as needed
+    name_position = (0, 360)  # Adjust the y-coordinate as needed
+    content_position = (0, 500)  # Adjust the y-coordinate as needed
+    date_position = (0, 590)  # Adjust the y-coordinate as needed
 
     # Draw the name text
     draw_centered_text(draw, name, name_position, font_large, fill="black", image_width=image_width)

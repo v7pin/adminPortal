@@ -17,7 +17,7 @@ def draw_centered_multiline_text(draw, text, position, font, fill, image_width, 
         line_height = draw.textbbox((0, 0), line, font=font)[3] - draw.textbbox((0, 0), line, font=font)[1]
         y += line_height + spacing
 
-def generate_certificate(name, date, internship_type, period, grade, gender, output_path):
+def generate_certificate(name, internship_type, period, periodFromDate,periodToDate,grade, gender, output_path):
     # Load the certificate template
     template_path = './certificates/template-experience-blank.jpg'
     template = Image.open(template_path)
@@ -32,7 +32,8 @@ def generate_certificate(name, date, internship_type, period, grade, gender, out
     font_small = ImageFont.truetype(font_path, 45)
 
     # Convert the date to the desired format
-    formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%B %d, %Y")
+    formatted_periodFromDate = datetime.strptime(periodFromDate, "%Y-%m-%d").strftime("%B %d, %Y")
+    formatted_periodToDate = datetime.strptime(periodToDate, "%Y-%m-%d").strftime("%B %d, %Y")
 
     # Define text positions
     name_position = (0, 540)
@@ -56,7 +57,7 @@ def generate_certificate(name, date, internship_type, period, grade, gender, out
 
     content_text = f"""
 for successful completion of Internship as a "{internship_type}" Intern at
-Kshitiksha Foundation for the period of {period} ({formatted_date}).
+Kshitiksha Foundation for the period of {period} ({formatted_periodFromDate} - {formatted_periodToDate}).
 {pronoun_possessive} Internship performance is graded as '{grade}'.
 
 {pronoun_subject} is hard working, talented, easy to work with, and can meet deadlines. {pronoun_subject} is
@@ -71,11 +72,12 @@ amazing & recommend {pronoun_object} to everyone!
 
 if __name__ == "__main__":
     name = sys.argv[1]
-    date = sys.argv[2]
-    internship_type = sys.argv[3]
-    period = sys.argv[4]
-    grade = sys.argv[5]
-    gender = sys.argv[6]
-    output_path = sys.argv[7]
-    generate_certificate(name, date, internship_type, period, grade, gender, output_path)  
+    internship_type = sys.argv[2]
+    period = sys.argv[3]
+    periodFromDate=sys.argv[4]
+    periodToDate=sys.argv[5]
+    grade = sys.argv[6]
+    gender = sys.argv[7]
+    output_path = sys.argv[8]
+    generate_certificate(name, internship_type, period, periodFromDate, periodToDate, grade, gender, output_path)  
 

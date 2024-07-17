@@ -19,7 +19,7 @@ const ProvideCertificate = () => {
   const handlePreview = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2000/api/previewCertificate', {
+      const response = await axios.post('//admin.kshitiksha.xyz/api/previewCertificate', {
         gender,
         template,
         name,
@@ -37,7 +37,7 @@ const ProvideCertificate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2000/api/sendCertificate', {
+      const response = await axios.post('//admin.kshitiksha.xyz/api/sendCertificate', {
         email,
         gender,
         template,

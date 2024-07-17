@@ -19,7 +19,7 @@ const LinkUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/link-update", formData);
+      await axios.post("//admin.kshitiksha.xyz/api/link-update", formData);
       setMessage("Link updated successfully!");
     } catch (error) {
       setMessage("Failed to update link.");
@@ -35,7 +35,7 @@ const LinkUpdate = () => {
 
   const handleLogout = async () => {
     try{
-    const response = await axios.post("http://localhost:2000/adminLogout")
+    const response = await axios.post("//admin.kshitiksha.xyz/adminLogout")
     console.log(response.data.message)
     navigate("/");
     }

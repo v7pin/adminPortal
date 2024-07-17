@@ -16,9 +16,9 @@ const ShowDatabase = () => {
       try {
         let response;
         if (selectedDatabase === "donations") {
-          response = await axios.get("http://localhost:2000/getDonations");
+          response = await axios.get("//admin.kshitiksha.xyz/getDonations");
         } else if (selectedDatabase === "registrations") {
-          response = await axios.get("http://localhost:2000/getRegistrations");
+          response = await axios.get("//admin.kshitiksha.xyz/getRegistrations");
         }
         console.log(response.data);
         setData(Array.isArray(response.data) ? response.data : []);
@@ -68,7 +68,7 @@ const ShowDatabase = () => {
 
   const handleLogout = async () => {
     try{
-    const response = await axios.post("http://localhost:2000/adminLogout")
+    const response = await axios.post("//admin.kshitiksha.xyz/adminLogout")
     console.log(response.data.message)
     navigate("/");
     }
@@ -153,7 +153,7 @@ const ShowDatabase = () => {
                   {selectedDatabase === "donations" ? (
                     <td className="py-2 px-4 border">
                       <a
-                        href={`http://localhost:5000/uploads/${entry.receipt}`}
+                        href={`//admin.kshitiksha.xyz/uploads/${entry.receipt}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500"

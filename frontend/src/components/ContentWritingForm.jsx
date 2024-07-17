@@ -24,7 +24,7 @@ function ContentWritingForm() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/settings")
+      .get("//admin.kshitiksha.xyz/api/settings")
       .then((response) => {
         if (response.data) {
           setFormData((formData) => ({
@@ -63,7 +63,7 @@ function ContentWritingForm() {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
-      axios.post("http://localhost:5000/api/register/content-writing", formData)
+      axios.post("//admin.kshitiksha.xyz/api/register/content-writing", formData)
         .then(response => {
           setShowModal(true);
           console.log("Success:", response.data);

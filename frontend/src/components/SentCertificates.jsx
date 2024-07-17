@@ -12,7 +12,7 @@ const SentCertificates = () => {
     const fetchSentCertificates = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:2000/api/sendCertificate"
+          "//admin.kshitiksha.xyz/api/sendCertificate"
         );
         setSentCertificates(response.data);
       } catch (error) {

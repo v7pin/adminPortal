@@ -7,7 +7,7 @@ const AdminPanel = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try{
-    const response = await axios.post("http://localhost:2000/adminLogout")
+    const response = await axios.post("//admin.kshitiksha.xyz/adminLogout")
     console.log(response.data.message)
     navigate("/");
     }

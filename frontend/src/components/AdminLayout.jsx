@@ -10,7 +10,7 @@ const AdminLayout = () =>{
     useEffect(() => {
         const fetchData = async () => {
           try {    
-            const response = await axios.get('http://localhost:2000/authCheck');
+            const response = await axios.get('//admin.kshitiksha.xyz/authCheck');
             setAuth(response.data.auth)
           } catch (error) {
             navigate('/')

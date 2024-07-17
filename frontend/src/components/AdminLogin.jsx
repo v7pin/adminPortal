@@ -16,7 +16,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
 
-      const res = await axios.post('http://localhost:2000/adminLogin',formData);
+      const res = await axios.post('//admin.kshitiksha.xyz/adminLogin',formData);
       console.log(res.data.auth)
       if(res.data.auth)
       navigate('/admin/home')
